@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🕊️ Gửi Bé Yêu — Thuần Khiết & Lời Hẹn Ước 🤍✨</title>
+  <meta name="description"
+    content="Trang web tỏ tình phong cách Quiet Luxury dành riêng cho nàng Xử Nữ thanh lịch - Bạch Lạp Kim">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Canvas for Falling White Petals & Shimmering Crystal Stardust -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- Ambient soft sunlight & prism rainbow glow -->
+  <div class="prism-sunlight"></div>
+
+  <!-- Rising delicate stardust sparks -->
+  <div id="stardustContainer"></div>
+
+  <main id="app">
+    <!-- SECTION 1: Silk Ribbon Haute Couture Gift Box (Quiet Luxury Intro) -->
+    <section class="section section-intro active" id="section-intro">
+      <div class="content-wrapper">
+        <div class="luxury-gift-wrapper" id="giftTrigger">
+          <div class="gift-halo"></div>
+
+          <div class="gift-box" id="giftBox">
+            <div class="box-lid">
+              <div class="ribbon-vertical"></div>
+              <div class="ribbon-horizontal"></div>
+              <div class="silk-bow" id="silkBow">
+                <span class="bow-center">🕊️</span>
+                <span class="bow-tail-left"></span>
+                <span class="bow-tail-right"></span>
+              </div>
+            </div>
+            <div class="box-base">
+              <div class="letter-preview">💌</div>
+            </div>
+          </div>
+
+          <div class="floral-wreath">
+            <span class="flower-icon">🌸</span>
+            <span class="flower-icon">✨</span>
+            <span class="flower-icon">🤍</span>
+          </div>
+
+          <p class="intro-hint">🕊️ Có một món quà tinh tế gửi riêng cho nàng Xử Nữ...</p>
+          <button class="open-gift-btn" id="openGiftBtn">
+            <span>Mở dải lụa yêu thương</span>
+            <span class="btn-sparkle">✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Letterpress Haute Stationery Love Letter -->
+    <section class="section section-letter" id="section-letter">
+      <div class="content-wrapper">
+        <div class="letter-card ivory-luxury">
+          <div class="floral-corner top-left">🌸</div>
+          <div class="floral-corner top-right">🕊️</div>
+
+          <div class="letter-header">
+            <span class="header-star">✨</span>
+            <h1 class="letter-title">Gửi Bé Yêu</h1>
+            <span class="header-star">✨</span>
+          </div>
+
+          <div class="letter-body">
+            <div class="stationery-paper">
+              <p class="typewriter" id="typewriter"></p>
+            </div>
+
+            <div class="letter-signature hidden" id="letterSignature">
+              <p class="signature-text">~ Giữa thế gian ồn ã, em là đóa hoa bình yên nhất trong lòng anh ~</p>
+              <button class="btn-luxury glow-btn" id="btnToQuestion">
+                <span>Lắng nghe lời hẹn ước cùng anh</span>
+                <span class="btn-arrow">🤍 →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: The Confession Question -->
+    <section class="section section-question" id="section-question">
+      <div class="content-wrapper">
+        <div class="question-card ivory-luxury">
+          <div class="floral-corner top-left">✨</div>
+          <div class="floral-corner top-right">✨</div>
+
+          <div class="floating-ring">💍</div>
+
+          <h2 class="question-title">
+            <span class="gem-accent">🤍</span>
+            Em có đồng ý cùng anh bước qua những năm tháng thanh xuân dịu dàng nhất không?
+            <span class="gem-accent">🤍</span>
+          </h2>
+          <p class="question-subtitle">Trước sự tinh khôi của đất trời, anh muốn được bên cạnh che chở và mang lại hạnh
+            phúc cho em mỗi ngày...</p>
+
+          <div class="question-buttons">
+            <button class="btn-answer btn-yes" id="btnYes">
+              <span class="btn-emoji">🕊️</span>
+              <span>Em đồng ý! 💖</span>
+            </button>
+            <button class="btn-answer btn-no" id="btnNo">
+              <span class="btn-emoji">💭</span>
+              <span>Để suy nghĩ đã...</span>
+            </button>
+          </div>
+
+          <!-- Warning banner appears after No button explosion -->
+          <div class="warning-banner hidden" id="warningBanner">
+            <div class="warning-badge">🕊️ THÔNG BÁO TỪ TRÁI TIM ✨</div>
+            <h3 class="warning-title">TUI BIẾT THẾ NÀO CŨNG TỚI ĐÂY MÀ! <span class="emoji-icon">🙈</span></h3>
+            <p class="warning-desc">
+              <strong>Bấm nút kia đi nha máaaaaaaaa! 💕</strong>
+            </p>
+            <div class="arrow-indicator">
+              <span class="bounce-arrow">👉</span>
+              <span class="indicator-text">Chỉ có duy nhất nút màu vàng kim lấp lánh thôi nè!</span>
+              <span class="bounce-arrow">👈</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Pure Ivory & Golden Celebration -->
+    <section class="section section-yes" id="section-yes">
+      <div class="content-wrapper">
+        <div class="celebration-card ivory-luxury">
+          <div class="fireworks" id="floralCelebration"></div>
+
+          <div class="celebration-duo">
+            <span class="dove-icon">🕊️</span>
+            <span class="heart-gem">💖</span>
+            <span class="dove-icon">🕊️</span>
+          </div>
+
+          <h1 class="celebration-title">HẠNH PHÚC VIÊN MÃN! <span class="emoji-icon">🎉</span><span
+              class="emoji-icon">✨</span></h1>
+          <p class="celebration-text">Cảm ơn em đã bước vào cuộc đời và làm thế giới của anh bừng sáng!</p>
+
+          <div class="luxury-promise">
+            <p class="promise-quote">
+              "Thanh khiết như hoa trắng đầu mùa,<br>
+              Dịu dàng và trọn vẹn như bản mệnh Bạch Lạp Kim.<br>
+              <strong>Yêu nàng Xử Nữ của anh mãi mãi!</strong>"
+            </p>
+          </div>
+
+          <div class="ivory-date-badge">
+            <span class="badge-icon">🕊️</span>
+            <div>
+              <p class="badge-label">Ngày khởi đầu cho câu chuyện tình yêu đôi ta</p>
+              <p class="the-date" id="theDate"></p>
+            </div>
+            <span class="badge-icon">💍</span>
+          </div>
+
+          <div class="ivory-wishes">
+            <span class="wish-item">🌸 Dịu Dàng & Thanh Khiết</span>
+            <span class="wish-item">🤍 Yêu Thương Trọn Đời</span>
+            <span class="wish-item">✨ Bình Yên & Hạnh Phúc</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Center Screen Countdown Overlay (3, 2, 1 BOOM!) -->
+    <div class="screen-countdown hidden" id="screenCountdown">
+      <div class="countdown-backdrop"></div>
+      <div class="countdown-box">
+        <div class="countdown-badge">⚠️ QUÁ TẢI HỆ THỐNG ⚠️</div>
+        <div class="countdown-number" id="countdownNumber">3</div>
+        <div class="countdown-subtext" id="countdownSubtext">...</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Ambient audio controls -->
+  <button class="music-toggle" id="musicToggle" title="Bật/Tắt bản nhạc piano êm dịu">
+    <span id="musicIcon">🔇</span>
+  </button>
+
+  <!-- Audio: Soothing romantic acoustic piano -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-piano-reflections-22.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
